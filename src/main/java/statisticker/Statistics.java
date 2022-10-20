@@ -6,9 +6,9 @@ import java.util.Collections;
 public class Statistics 
 {
    public static class Stats {
-       public Float min;
-       public Float max;
-       public Float avg;
+       public float min;
+       public float max;
+       public float avg;
        
        public Stats(float minimum,float maximum, float average)
        {
