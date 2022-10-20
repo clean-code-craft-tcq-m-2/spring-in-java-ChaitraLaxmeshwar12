@@ -42,7 +42,8 @@ public class Statistics
        else
         {
           min = Float.NaN;
-			max = Float.NaN;
+	  max = Float.NaN;
+	  average = Float.NaN;
         }
     }
     return new Stats(min,max,average);
