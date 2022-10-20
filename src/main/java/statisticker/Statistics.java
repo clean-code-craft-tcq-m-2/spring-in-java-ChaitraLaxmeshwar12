@@ -39,6 +39,11 @@ public class Statistics
         min= numbers.get(0);
         max = numbers.get(size-1);
         }
+       else
+        {
+          min = Float.NaN;
+			max = Float.NaN;
+        }
     }
     return new Stats(min,max,average);
     }
