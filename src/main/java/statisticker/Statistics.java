@@ -1,43 +1,36 @@
 package statisticker;
 
 import java.util.List;
-import java.util.Collections;
 
 public class Statistics 
-{
-   public static class Stats {
-       public Float min;
-       public Float max;
-       public Float average;    
-   }
-              
+{   public static class Stats {
+        public Float max;
+        public Float min;
+        public Float average;
+    }
     public static Stats getStatistics(List<Float> numbers) {
         //implement the computation of statistics here
-	 Stats stats =  new Stats();
-         
-
-        // 1. Find average
-        float sum=0.0f;
-	sum = stats.min = stats.max = stats.average=0.0f;
-        int size=numbers.size();
-        if(size>0)
-        {
-        for(int i=0;i<size;i++)
-        {
-            sum = sum + numbers.get(i);
+        Stats stats = new Stats();
+        final int n = numbers.size();
+        if (n >= 1) {
+            float sum = 0.0f;
+            sum = stats.max = stats.min = numbers.get(0);
+            for (int i=1; i<n; i++){
+                float num = numbers.get(i);
+                if (num>stats.max){
+                    stats.max = num;
+                }
+                if(num<stats.min) {
+                    stats.min = num;
+                }
+                sum = sum + num;
+            }
+            stats.average =  sum/n;
         }
-        stats.average = sum/size;
-        Collections.sort(numbers);
-        stats.min= numbers.get(0);
-        stats.max = numbers.get(size-1);
-        }
-       else
-        {
-             stats.min = Float.NaN;
-	     stats.max = Float.NaN;
-	     stats.average = Float.NaN;
+        else {
+            stats.max = stats.min = stats.average = Float.NaN;
         }
         return stats;
-    } 
     }
 
+}
