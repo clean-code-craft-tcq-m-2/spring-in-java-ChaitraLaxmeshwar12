@@ -10,7 +10,7 @@ public class Statistics
        public Float max;
        public Float avg;
        
-       public Stats(float minimum,float maximum, float average)
+       public Stats(Float minimum,Float maximum, Float average)
        {
          this.min = minimum;
          this.max = maximum;
@@ -22,9 +22,9 @@ public class Statistics
     public static Stats getStatistics(List<Float> numbers) {
         //implement the computation of statistics here
 	 Stats stats =  new Stats();
-         float stats.min=0f;
-         float stats.max= 0f;
-         float stats.average = 0f;
+         Float stats.min=0.0f;
+         Float stats.max= 0.0f;
+         Float stats.average = 0.0f;
 
         // 1. Find average
         float sum=0f;
