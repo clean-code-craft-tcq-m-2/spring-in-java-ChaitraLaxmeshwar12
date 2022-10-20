@@ -8,7 +8,7 @@ public class Statistics
    public static class Stats {
        public Float min;
        public Float max;
-       public Float avg;    
+       public Float average;    
    }
               
     public static Stats getStatistics(List<Float> numbers) {
@@ -17,7 +17,7 @@ public class Statistics
          
 
         // 1. Find average
-        float sum=0f;
+        float sum=0.0f;
 	sum = stats.min = stats.max = stats.average=0.0f;
         int size=numbers.size();
         if(size>0)
