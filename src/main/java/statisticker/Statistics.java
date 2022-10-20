@@ -14,16 +14,16 @@ public class Statistics
          this.min = min;
          this.max = max;
          this.average = average;
-         return;
        }
        
    }
               
     public static Stats getStatistics(List<Float> numbers) {
         //implement the computation of statistics here
+	 Stats stats = new Stats();
          float min=0f;
-        float max= 0f;
-        float average = 0f;
+         float max= 0f;
+         float average = 0f;
 
         // 1. Find average
         float sum=0f;
@@ -34,18 +34,18 @@ public class Statistics
         {
             sum = sum + numbers.get(i);
         }
-        average = sum/size;
+        stats.average = sum/size;
         Collections.sort(numbers);
-        min= numbers.get(0);
-        max = numbers.get(size-1);
+        stats.min= numbers.get(0);
+        stats.max = numbers.get(size-1);
         }
        else
         {
-          min = Float.NaN;
-	  max = Float.NaN;
-	  average = Float.NaN;
+             stats.min = Float.NaN;
+	     stats.max = Float.NaN;
+	     stats.average = Float.NaN;
         }
+        return stats;
+    } 
     }
-    return new Stats(min,max,average);
-    }
-}
+
