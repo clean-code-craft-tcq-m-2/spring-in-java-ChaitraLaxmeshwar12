@@ -8,26 +8,17 @@ public class Statistics
    public static class Stats {
        public Float min;
        public Float max;
-       public Float avg;
-       
-       public Stats(Float minimum,Float maximum, Float average)
-       {
-         this.min = minimum;
-         this.max = maximum;
-         this.avg = average;
-       }
-       
+       public Float avg;    
    }
               
     public static Stats getStatistics(List<Float> numbers) {
         //implement the computation of statistics here
 	 Stats stats =  new Stats();
-         Float stats.min=0.0f;
-         Float stats.max= 0.0f;
-         Float stats.average = 0.0f;
+         
 
         // 1. Find average
         float sum=0f;
+	sum = stats.min = stats.max = stats.average=0.0f;
         int size=numbers.size();
         if(size>0)
         {
