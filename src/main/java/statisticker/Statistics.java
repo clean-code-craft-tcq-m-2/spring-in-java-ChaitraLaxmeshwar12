@@ -5,24 +5,27 @@ import statisticker.Stats;
 
 public class Statistics 
 {   
-    public static Stats getStatistics(List<Float> numbers) {
-        //implement the computation of statistics here
-        Stats s = new Stats();
-        // compute average
-         float sum=0f;
-         if(numbers.size()>0)
-         {
-              int listsize = numbers.size();
-              for(int i=0;i<listsize;i++)
-              {
-                     sum = sum + numbers.get(i); 
-              }
-              s.average = sum/listsize;
-         }
-         else
-         {
-              s.average = Float.NAN;      
-         }
-        retutn s;
-}
+   public static Stats getStatistics(List<Float> numbers) {
+		Stats s = new Stats();
+		
+		float sum =0.0f;
+		// compute average
+		int numbersSize = numbers.size();
+		if(numbersSize>0)
+		{
+		   for(int i=0;i<numbersSize;i++)
+		   {
+			   sum = sum + numbers.get(i);
+		   }
+		   s.average = sum /numbersSize;
+		   Collections.sort(numbers);
+		   s.min = numbers.get(0);
+		   s.max = numbers.get(numbersSize-1);
+		}
+		else
+		{
+			s.average= s.min= s.max=Float.NaN;
+		}
+		return s;		
+	}
 }
