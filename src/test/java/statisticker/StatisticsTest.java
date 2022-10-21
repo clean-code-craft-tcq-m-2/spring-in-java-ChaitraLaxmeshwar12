@@ -16,8 +16,7 @@ public class StatisticsTest
     {
         Float[] numbers = {1.5f, 8.9f, 3.2f, 4.5f};
         List<Float> numberList = Arrays.asList(numbers);
-
-        Statistics.Stats s = Statistics.getStatistics(numberList);
+        Stats s = Statistics.getStatistics(numberList);
 
         float epsilon = 0.001f;
         assertEquals(s.average, 4.525f, epsilon);
@@ -29,7 +28,7 @@ public class StatisticsTest
     {
         List<Float> emptyList = new ArrayList<Float>();
 
-        Statistics.Stats s = Statistics.getStatistics(emptyList);
+        Stats s = Statistics.getStatistics(emptyList);
         assertTrue(s.max.isNan());
         assertTrue(s.min.isNan());
         assertTrue(s.average.isNan());
