@@ -21,7 +21,8 @@ public class Statistics
          }
          else
          {
-              s.average = float.NAN;      
+              s.average = Float.NAN;      
          }
         retutn s;
+}
 }
