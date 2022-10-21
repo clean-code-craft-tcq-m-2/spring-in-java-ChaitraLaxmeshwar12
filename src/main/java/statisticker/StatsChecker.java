@@ -12,7 +12,7 @@ public class StatsChecker
     }
 
     public void checkAndAlert(List<Float> numbers){
-        Statistics s = Statistics.getStatistics(numbers);
+        Stats s = Statistics.getStatistics(numbers);
         if(s.max > this.maxThreshold) {
             for(IAlerter alert : this.alerts){
                 alert.trigger();
